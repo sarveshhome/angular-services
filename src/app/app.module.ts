@@ -9,10 +9,19 @@ import { HomeComponent } from './home/home.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, BookingComponent, HomeComponent, NoPageFoundComponent, AboutComponent, ContactComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    BookingComponent,
+    HomeComponent,
+    NoPageFoundComponent,
+    AboutComponent,
+    ContactComponent
+  ],
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
