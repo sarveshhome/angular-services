@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { BookingComponent } from './booking/booking.component';
 import { HomeComponent } from './home/home.component';
+import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, BookingComponent, HomeComponent ],
+  declarations: [ AppComponent, HelloComponent, BookingComponent, HomeComponent, NoPageFoundComponent, AboutComponent, ContactComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
