@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { appstateService } from '../shared/appstate.service';
 
 @Component({
   selector: 'app-booking',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./booking.component.css']
 })
 export class BookingComponent implements OnInit {
+  message: string;
 
-  constructor() { }
+  constructor(private appstate: appstateService) {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
