@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'hotela', component: HotelaComponent },
   { path: 'hotelb', component: HotelbComponent },
   { path: 'hotelc', component: HotelcComponent },
-  { path: 'booknow', component: BookingComponent },
+  { path: 'booknow/:id', component: BookingComponent },
   { path: '**', component: NoPageFoundComponent }
 ];
 
