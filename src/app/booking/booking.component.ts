@@ -20,7 +20,8 @@ export class BookingComponent implements OnInit {
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       this.id = +params.id; // (+) converts string 'id' to a number
-      console.log(this.id);
+      console.log(params.id);
+      this.message = this.id.toString();
       // In a real app: dispatch action to load the details here.
     });
   }

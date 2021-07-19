@@ -13,6 +13,7 @@ export class HotelaComponent implements OnInit {
 
   Booknow(event: any) {
     console.log(event);
+    this.id = event;
     const url = '/booknow';
     const myurl = `${url}/${this.id}`;
     this.router.navigateByUrl(myurl).then(e => {
