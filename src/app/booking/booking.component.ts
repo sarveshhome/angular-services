@@ -1,34 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { appstateService } from '../shared/appstate.service';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.css']
 })
 export class BookingComponent implements OnInit {
+  public parameterValue: string;
   message: string;
   id: number;
   private sub: any;
   constructor(
     private appstate: appstateService,
-    private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) {}
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      this.id = +params.id; // (+) converts string 'id' to a number
-      console.log(params.id);
-      this.message = this.id.toString();
-      // In a real app: dispatch action to load the details here.
-    });
+    this.parameterValue = this.route.snapshot.params.id;
+    //this.message = this.parameterValue;
+    console.log(this.route.snapshot.paramMap.get('id'));
+    const returnvaluefromservice = this.appstate.messages(this.parameterValue);
+    console.log(returnvaluefromservice[0]['EM2']);
+    this.message = returnvaluefromservice[0]['EM2'];
+  }
 
-    console.log(
-      'this.route.snapshot.paramMap.get(',
-      typeof this.route.snapshot.paramMap.get('id')
-    );
-    this.id = +this.route.snapshot.paramMap.get('id');
+  goBack(): void {
+    this.location.back();
   }
 }
