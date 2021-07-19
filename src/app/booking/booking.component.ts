@@ -20,8 +20,11 @@ export class BookingComponent implements OnInit {
 
   ngOnInit() {
     this.parameterValue = this.route.snapshot.params.id;
-    this.message = this.parameterValue;
+    //this.message = this.parameterValue;
     console.log(this.route.snapshot.paramMap.get('id'));
+    const returnvaluefromservice = this.appstate.messages(this.parameterValue);
+    console.log(returnvaluefromservice[0]['EM2']);
+    this.message = returnvaluefromservice[0]['EM2'];
   }
 
   goBack(): void {
