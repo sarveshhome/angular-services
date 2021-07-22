@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { HotelaComponent } from './hotela/hotela.component';
 import { HotelbComponent } from './hotelb/hotelb.component';
 import { HotelcComponent } from './hotelc/hotelc.component';
+import { HoteldComponent } from './hoteld/hoteld.component';
 import { NoPageFoundComponent } from './no-page-found/no-page-found.component';
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'hotela', component: HotelaComponent },
   { path: 'hotelb', component: HotelbComponent },
   { path: 'hotelc', component: HotelcComponent },
+  { path: 'hoteld', component: HoteldComponent },
   { path: 'booknow/:id', component: BookingComponent },
   { path: '**', component: NoPageFoundComponent }
 ];
